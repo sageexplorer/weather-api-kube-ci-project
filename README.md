@@ -1,14 +1,13 @@
 # CI-DOCKER-KUBE-AWS
 
-[![Build Status](http://ec2-18-219-86-226.us-east-2.compute.amazonaws.com:8080/buildStatus/icon?job=static%2Fmaster)](http://ec2-18-219-86-226.us-east-2.compute.amazonaws.com:8080/job/static/job/master/)
+[![Build Status](http://ec2-18-219-86-226.us-east-2.compute.amazonaws.com:8080/buildStatus/icon?job=Weather-app)](http://ec2-18-219-86-226.us-east-2.compute.amazonaws.com:8080/job/Weather-app/)
 
 Simple ngnix webserver running kubernetes pods in aws. The app shows a simple weather page.
 
  * To build docker image, run ./run_docker.sh
 
- * Docker Image is hosted in Dockerhub. The image is sage007/simple-ngnix 
+ * Docker Image is hosted in Dockerhub. The image is sage007/weather-ngnix 
  
- * create.sh is a cloudformation script to create AWS resources. 
 
  * To run app using kubernetes, run ./run_kubernetes.sh
 
@@ -17,7 +16,7 @@ Simple ngnix webserver running kubernetes pods in aws. The app shows a simple we
 Artifacts:
  * Jenkinsfile contains build steps
  
- * servers.yaml is a cloudformation template to start AWS services, which is run using ./create.sh
+ * EKS clusters can be spun in  AWS service using ./create.sh
  
 Rolling Updates:
  
@@ -33,7 +32,6 @@ Rolling Updates:
 
 kubernetes Cluster
 
- * Kubernetes cluster is created by cloudformation template on Amazon. The files needed for cluster creation is in cloudformation folder. 
  
  * To build kubernetes deployment, and service in AWS, run `kubectl create -f deployment.yaml && 
 kubectl create -f service.yml` commands from the kubernetes directory. 
