@@ -31,17 +31,17 @@ Artifacts:
  
  ## A/B Deployment
 
-A/B tests are performed by deplying different versions of the site at the same time.
+* A/B tests are performed by deplying different versions of the site at the same time.
 
-New Docker image is created
+* New Docker image is created
 
-New deployemnt yml file is created in the deployment-canary.yml
+* New deployemnt yml file is created in the deployment-canary.yml
 
-Replica set is scaled down to 1
+* Replica set is scaled down to 1
 
-The app: frontend, and track: stable are added/changed so that the newer vewrsion has a label
+* The app: frontend, and track: stable are added/changed so that the newer vewrsion has a label
 
-Finally, following command is run `kubectl apply -f deployment-canary-deployment.yml`
+* Finally, following command is run `kubectl apply -f deployment-canary-deployment.yml`
  
  
 ## kubernetes Cluster
